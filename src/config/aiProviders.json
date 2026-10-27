@@ -1,0 +1,19 @@
+{
+  "PROVIDER_INFO": {
+    "gemini": {
+      "name": "Google Gemini",
+      "description": "Google's most capable AI model with strong reasoning and multimodal capabilities",
+      "color": "#4285F4"
+    },
+    "claude": {
+      "name": "Anthropic Claude",
+      "description": "Advanced AI assistant with excellent reasoning and code generation capabilities",
+      "color": "#D97757"
+    },
+    "openai": {
+      "name": "OpenAI ChatGPT",
+      "description": "Industry-leading language model with broad capabilities",
+      "color": "#10A37F"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+name: Release (Windows & Linux)
+
+# Builds the unsigned Windows (NSIS) and Linux (AppImage) artifacts on their
+# native runners and publishes them + the electron-updater manifests to the
+# Ternlux/releases repo. macOS is intentionally excluded — it is built and
+# notarized locally, and the macOS runner is 10x the Actions minute cost.
+#
+# Trigger: push a version tag (e.g. `v1.0.1`), or run manually from the
+# Actions tab (workflow_dispatch) for ad-hoc test builds.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+# The built-in token only needs to read THIS repo for checkout. Publishing
+# goes to a different repo (Ternlux/releases) using the GH_TOKEN secret, so
+# no write permission is required on the workflow token itself.
+permissions:
+  contents: read
+
+# A newer run for the same ref supersedes an in-progress one.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            platform: win
+          - os: ubuntu-latest
+            platform: linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      # Node 24 matches the local dev/build environment. This matters: npm 11
+      # (bundled with Node 24) resolves electron-updater's dependency tree
+      # differently from npm 10 (Node 22), so the committed package-lock.json
+      # must be produced and consumed by the same npm major or `npm ci` fails
+      # the sync check.
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      # `npm install` (not `npm ci`) is used deliberately. This project's tree
+      # (2000+ packages, react peer-dependency conflicts, duplicate ws
+      # versions) triggers a known npm quirk where `npm install` and `npm ci`
+      # disagree on hoisting, so `npm ci` rejects an otherwise-valid lockfile
+      # with spurious "Missing: <pkg> from lock file" errors. `npm install`
+      # resolves and installs against package.json directly and tolerates that
+      # drift. It still installs the platform-matching native prebuilts
+      # (sqlite3 and the correct @lancedb/lancedb-* package) on each runner.
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      # Each connector/skill under plugins/ is a self-contained package with its
+      # own package.json and its own node_modules (gitignored, so absent on a
+      # fresh checkout). The root `npm install` above does NOT reach them — they
+      # are outside the root dependency tree — so without this step the packaged
+      # app ships every connector WITHOUT its runtime dependency (mssql, pg,
+      # mongoose, @aws-sdk, @google-cloud/*, snowflake-sdk, ...). The plugin
+      # loader try/catches a failed require, so the app still launches but the
+      # connectors silently fail to load. The local macOS build avoids this only
+      # because those node_modules happen to be installed on the dev machine.
+      # --omit=dev keeps only runtime deps; all plugin deps are pure JS (no
+      # binding.gyp), so this installs no native modules and needs no rebuild.
+      # shell: bash works on windows-latest too (Git Bash is preinstalled).
+      - name: Install plugin dependencies
+        shell: bash
+        run: |
+          for d in plugins/connectors/* plugins/skills/*; do
+            if [ -f "$d/package.json" ]; then
+              echo "== installing deps for $d =="
+              ( cd "$d" && npm install --omit=dev --no-audit --no-fund )
+            fi
+          done
+
+      # parquetjs's optional `lzo` dependency (the LZO parquet codec) uses a V8
+      # API removed in Electron 40 and cannot compile against it on any platform.
+      # The local macOS build already runs without it: npm prunes the failed
+      # optional so node_modules/lzo never exists there. On the CI runners the
+      # directory lingers after install, so electron-builder's @electron/rebuild
+      # finds its binding.gyp and hard-fails the compile. Remove it first — this
+      # just replicates the mac state. parquetjs requires lzo lazily (only when
+      # the LZO codec is actually used), so the app loads and runs fine without it.
+      - name: Drop incompatible optional native dep (lzo)
+        run: node -e "require('fs').rmSync('node_modules/lzo',{recursive:true,force:true})"
+
+      # Reuses the existing release:win / release:linux scripts, which run
+      # react-scripts build -> minify-dist -> electron-builder --publish always.
+      # electron-builder reads GH_TOKEN from the env to upload to Ternlux/releases.
+      # CI is forced false so react-scripts does not treat lint warnings as
+      # build-breaking errors (GitHub Actions sets CI=true by default).
+      - name: Build & publish ${{ matrix.platform }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CI: "false"
+        run: npm run release:${{ matrix.platform }}

@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-slack",
+  "version": "1.0.0",
+  "description": "Slack connector plugin for Ternlux - read messages and send messages to Slack channels",
+  "main": "index.js",
+  "keywords": [
+    "ternlux",
+    "plugin",
+    "connector",
+    "slack",
+    "api",
+    "messaging"
+  ],
+  "author": "Ternlux",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}

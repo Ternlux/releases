@@ -1,0 +1,13 @@
+Ternlux
+Copyright 2026 Ternlux Inc.
+
+This product includes software developed by Ternlux Inc. (https://www.ternlux.com/).
+
+Licensed under the Apache License, Version 2.0. See the LICENSE file.
+
+Ternlux bundles third-party open-source components. Each remains licensed under
+its own terms, which are included in that component's package directory and in
+the *.LICENSE.txt files of the built application.
+
+"Ternlux" and the Ternlux logo are trademarks of Ternlux Inc. The Apache License
+does not grant permission to use them; see TRADEMARKS.md.

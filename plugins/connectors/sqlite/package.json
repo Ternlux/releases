@@ -1,0 +1,14 @@
+{
+  "name": "@ternlux/connector-sqlite",
+  "version": "1.0.0",
+  "description": "Local SQLite connector for Ternlux",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "sqlite",
+    "displayName": "SQLite",
+    "minAppVersion": "1.0.0"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

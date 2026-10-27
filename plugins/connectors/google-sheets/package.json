@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-google-sheets",
+  "version": "1.0.0",
+  "description": "Google Sheets connector plugin for Ternlux with OAuth2.0 authentication",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "ternlux": {
+    "id": "google-sheets",
+    "displayName": "Google Sheets",
+    "type": "connector",
+    "authType": "oauth2"
+  },
+  "dependencies": {
+    "@googleapis/drive": "^8.0.0",
+    "@googleapis/sheets": "^5.0.0",
+    "axios": "^1.6.0",
+    "google-auth-library": "^9.0.0"
+  }
+}

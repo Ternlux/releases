@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.83",
+        "--cdp-endpoint",
+        "http://127.0.0.1:9333",
+        "--output-dir",
+        "testing/e2e/runs/artifacts",
+        "--timeout-action",
+        "15000"
+      ]
+    }
+  }
+}

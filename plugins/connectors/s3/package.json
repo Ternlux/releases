@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-s3",
+  "version": "1.0.0",
+  "description": "Amazon S3 storage connector for Ternlux",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "s3",
+    "displayName": "Amazon S3",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.400.0",
+    "@aws-sdk/lib-storage": "^3.400.0"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,173 @@
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.settings-container {
+  background: white;
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.settings-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.settings-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.settings-close-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #8c8c8c;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-close-btn:hover {
+  background: #f0f0f0;
+  color: #262626;
+}
+
+.settings-layout {
+  flex: 1;
+  background: white;
+}
+
+.settings-sider {
+  background: #fafafa !important;
+  border-right: 1px solid #f0f0f0;
+}
+
+.settings-sider .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-sider-footer {
+  margin-top: auto;
+  padding: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.settings-menu {
+  background: transparent;
+  border-right: none;
+  padding: 16px 0;
+}
+
+.settings-menu .ant-menu-item {
+  margin: 4px 12px;
+  border-radius: 6px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.settings-menu .ant-menu-item-selected {
+  background: white;
+  color: #1890ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.settings-menu .ant-menu-item:not(.ant-menu-item-selected):hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: #262626;
+}
+
+.settings-content {
+  padding: 24px;
+  overflow-y: auto;
+  overflow-x: visible;
+  background: white;
+  position: relative;
+}
+
+/* Scrollbar styling */
+.settings-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.settings-content::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.settings-content::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 4px;
+}
+
+.settings-content::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* Ensure Ant Design dropdowns appear above settings modal */
+.ant-select-dropdown {
+  z-index: 2100 !important;
+}
+
+/* Form item wrapper needs to allow overflow */
+.settings-content .ant-form-item {
+  overflow: visible;
+}
+
+.settings-content .ant-select {
+  overflow: visible;
+}

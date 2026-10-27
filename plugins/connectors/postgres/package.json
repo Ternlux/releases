@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-postgres",
+  "version": "1.0.0",
+  "description": "PostgreSQL database connector for Ternlux",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "postgres",
+    "displayName": "PostgreSQL",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "dependencies": {
+    "pg": "^8.7.1",
+    "pg-cursor": "^2.10.3"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

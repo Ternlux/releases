@@ -1,0 +1,36 @@
+{
+  "name": "@ternlux/skill-vector-db-executor",
+  "version": "1.0.0",
+  "description": "Vector database executor skill for Ternlux - supports LanceDB and Pinecone with OpenAI embeddings",
+  "main": "index.js",
+  "ternlux": {
+    "type": "skill",
+    "id": "vector-db-executor",
+    "displayName": "Vector Database Executor",
+    "category": "transformer",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "scripts": {
+    "postinstall": "echo Vector DB Executor skill dependencies installed successfully"
+  },
+  "keywords": [
+    "ternlux",
+    "skill",
+    "vector-database",
+    "embeddings",
+    "lancedb",
+    "pinecone",
+    "openai"
+  ],
+  "author": "Ternlux",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "openai": "^4.28.0",
+    "@seald-io/nedb": "^4.0.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

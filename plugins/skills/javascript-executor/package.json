@@ -1,0 +1,25 @@
+{
+  "name": "@ternlux/skill-javascript-executor",
+  "version": "1.0.0",
+  "description": "JavaScript executor skill for Ternlux - runs an AI-generated JavaScript function with helpers for connectors, AI calls, embeddings, sqlite/nedb, and HTTP",
+  "main": "index.js",
+  "ternlux": {
+    "type": "skill",
+    "id": "javascript-executor",
+    "displayName": "JavaScript Executor",
+    "category": "transformer",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "keywords": [
+    "ternlux",
+    "skill",
+    "javascript",
+    "transformer"
+  ],
+  "author": "Ternlux",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@seald-io/nedb": "^4.0.2"
+  }
+}

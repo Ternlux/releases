@@ -1,0 +1,23 @@
+{
+  "name": "@ternlux/skill-presentation",
+  "version": "1.0.0",
+  "description": "Presentation skill for Ternlux - analyses saved data with an approved JavaScript function and presents it as a dashboard of KPIs, charts and written findings in the main chat",
+  "main": "index.js",
+  "ternlux": {
+    "type": "skill",
+    "id": "presentation",
+    "displayName": "Presentation",
+    "category": "chat",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "keywords": [
+    "ternlux",
+    "skill",
+    "presentation",
+    "dashboard",
+    "chat"
+  ],
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

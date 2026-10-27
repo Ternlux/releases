@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-rest-api",
+  "version": "1.0.0",
+  "description": "Generic REST API connector for Ternlux — auth lives here, per-endpoint fetch logic is authored on the DataSource node.",
+  "main": "index.js",
+  "keywords": [
+    "ternlux",
+    "plugin",
+    "connector",
+    "rest",
+    "api",
+    "http"
+  ],
+  "author": "Ternlux",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}

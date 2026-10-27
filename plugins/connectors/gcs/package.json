@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-gcs",
+  "version": "1.0.0",
+  "description": "Google Cloud Storage connector for Ternlux",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "gcs",
+    "displayName": "Google Cloud Storage",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.0.0",
+    "google-auth-library": "^9.0.0"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

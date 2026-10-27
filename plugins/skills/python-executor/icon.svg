@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="pyGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#387EB8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#366994;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pyGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE873;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD43B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#pyGradient1)" d="M12,2C10.89,2 10,2.89 10,4V8H14V9H8C6.89,9 6,9.89 6,11V15C6,16.11 6.89,17 8,17H10V13H14V17H16C17.11,17 18,16.11 18,15V11C18,9.89 17.11,9 16,9H14V4C14,2.89 13.11,2 12,2M11,4.5A0.5,0.5 0 0,1 11.5,5A0.5,0.5 0 0,1 11,5.5A0.5,0.5 0 0,1 10.5,5A0.5,0.5 0 0,1 11,4.5Z"/>
+  <path fill="url(#pyGradient2)" d="M12,22C13.11,22 14,21.11 14,20V16H10V15H16C17.11,15 18,14.11 18,13V9C18,7.89 17.11,7 16,7H14V11H10V7H8C6.89,7 6,7.89 6,9V13C6,14.11 6.89,15 8,15H10V20C10,21.11 10.89,22 12,22M13,19.5A0.5,0.5 0 0,1 12.5,19A0.5,0.5 0 0,1 13,18.5A0.5,0.5 0 0,1 13.5,19A0.5,0.5 0 0,1 13,19.5Z"/>
+</svg>

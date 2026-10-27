@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#6366f1" rx="8"/>
+
+  <!-- Vector database icon - layered cylinders with vector arrows -->
+
+  <!-- Bottom cylinder -->
+  <ellipse cx="32" cy="48" rx="18" ry="5" fill="#a5b4fc" opacity="0.6"/>
+  <rect x="14" y="43" width="36" height="8" fill="#818cf8" opacity="0.6"/>
+  <ellipse cx="32" cy="43" rx="18" ry="5" fill="#c7d2fe"/>
+
+  <!-- Middle cylinder -->
+  <ellipse cx="32" cy="38" rx="18" ry="5" fill="#a5b4fc" opacity="0.8"/>
+  <rect x="14" y="33" width="36" height="8" fill="#818cf8" opacity="0.8"/>
+  <ellipse cx="32" cy="33" rx="18" ry="5" fill="#c7d2fe"/>
+
+  <!-- Top cylinder -->
+  <ellipse cx="32" cy="28" rx="18" ry="5" fill="#a5b4fc"/>
+  <rect x="14" y="23" width="36" height="8" fill="#818cf8"/>
+  <ellipse cx="32" cy="23" rx="18" ry="5" fill="#e0e7ff"/>
+
+  <!-- Vector arrow indicators -->
+  <g fill="#fff" opacity="0.9">
+    <!-- Arrow 1 -->
+    <line x1="22" y1="18" x2="28" y2="12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <polygon points="28,12 26,14 30,14" fill="#fff"/>
+
+    <!-- Arrow 2 -->
+    <line x1="32" y1="18" x2="32" y2="10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <polygon points="32,10 30,12 34,12" fill="#fff"/>
+
+    <!-- Arrow 3 -->
+    <line x1="42" y1="18" x2="36" y2="12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <polygon points="36,12 34,14 38,14" fill="#fff"/>
+  </g>
+
+  <!-- Small "V" badge for Vector -->
+  <circle cx="50" cy="50" r="8" fill="#fff"/>
+  <text x="50" y="54" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6366f1" text-anchor="middle">V</text>
+</svg>

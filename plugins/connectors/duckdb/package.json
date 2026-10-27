@@ -1,0 +1,14 @@
+{
+  "name": "@ternlux/connector-duckdb",
+  "version": "1.0.0",
+  "description": "Local file connector for Ternlux — queries CSV, JSON and Parquet in place with DuckDB",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "duckdb",
+    "displayName": "DuckDB",
+    "minAppVersion": "1.0.0"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

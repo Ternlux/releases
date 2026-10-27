@@ -1,0 +1,18 @@
+{
+  "name": "@ternlux/connector-azure-blob",
+  "version": "1.0.0",
+  "description": "Azure Blob Storage connector for Ternlux",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "azure-blob",
+    "displayName": "Azure Blob Storage",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.17.0"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@ternlux/connector-google-drive",
+  "version": "1.0.0",
+  "description": "Google Drive storage connector for Ternlux",
+  "main": "index.js",
+  "ternlux": {
+    "type": "connector",
+    "id": "google-drive",
+    "displayName": "Google Drive",
+    "icon": "./icon.svg",
+    "minAppVersion": "1.0.0"
+  },
+  "dependencies": {
+    "@googleapis/drive": "^8.0.0",
+    "google-auth-library": "^9.0.0"
+  },
+  "author": "Ternlux",
+  "license": "Apache-2.0"
+}
