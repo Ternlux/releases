@@ -1,5 +1,9 @@
 # Ternlux
 
+<p align="center">
+  <img src="assets/demo.gif" width="600" alt="Ternlux demo: a left join built from one chat message, run locally, then moved into Postgres">
+</p>
+
 Ternlux is a free, local-first desktop app for ETL and data analysis. Connect
 databases, warehouses, cloud storage, APIs and local files, describe a pipeline
 in plain English, review the plan the AI drafts, and run it as deterministic
@@ -17,6 +21,10 @@ OpenAI-compatible endpoint, or a local model through Ollama or LM Studio.
 **Download:** official, signed builds are at
 [github.com/Ternlux/releases](https://github.com/Ternlux/releases) and
 [ternlux.com](https://www.ternlux.com/).
+
+## Tutorial
+
+[![Ternlux tutorial on YouTube](https://img.youtube.com/vi/lyfZjq1DRUM/maxresdefault.jpg)](https://youtu.be/lyfZjq1DRUM)
 
 ## Build from source
 
